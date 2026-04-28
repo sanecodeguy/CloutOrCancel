@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./App.css";
-
-const API_BASE = process.env.REACT_APP_API_URL || "http://localhost:8000";
+const API_BASE = "https://coc-backend-ms46.onrender.com";
+//const API_BASE = process.env.REACT_APP_API_URL || "http://localhost:8000";
 const EXAMPLES = [
   "This update is absolutely incredible 🔥",
   "Worst customer service ever, I'm done.",
