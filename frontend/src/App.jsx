@@ -1,7 +1,5 @@
-// App.jsx
 import React, { useState, useRef, useEffect } from "react";
 import "./App.css";
-
 
 const API_BASE = process.env.REACT_APP_API_URL || "http://localhost:8000";
 const EXAMPLES = [
@@ -52,7 +50,7 @@ const App = () => {
     setLoading(true);
 
     try {
-      const response = await fetch(`${API}/analyse`, {
+      const response = await fetch(`${API_BASE}/analyse`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ tweet: tweetText }),
@@ -84,7 +82,7 @@ const App = () => {
       const errorMsg = {
         id: Date.now() + 1,
         role: "assistant",
-        text: `⚠️ ${error.message} — Make sure the backend is running on port 8000.`,
+        text: `⚠️ ${error.message} — Tried to connect to ${API_BASE}. Make sure the backend is running.`,
       };
       setMessages((prev) => [...prev, errorMsg]);
     } finally {
